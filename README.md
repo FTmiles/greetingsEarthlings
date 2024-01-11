@@ -1,3 +1,5 @@
+## Small Talk app, submit your greetings
+
 changed root directory of the app
 server.servlet.context-path=/myapp
 
@@ -21,3 +23,8 @@ Controller file - HomeController.java
 * Add new greeting with POST JSON <br>
     * url: localhost:8080/myapp/addGreets<br>
     * JSON example: { "content":"Hello Dear Leader" }
+
+
+==================================
+### unrelated, about forms and pets
+http://localhost:8080/myapp/petName
