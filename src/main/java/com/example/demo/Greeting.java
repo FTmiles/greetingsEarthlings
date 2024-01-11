@@ -1,30 +1,41 @@
 package com.example.demo;
 
-public class Greeting {
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 
+
+@Entity
+public class Greeting {
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
     private String content = "hacked jaja";
 
-    public long getId(){
-        return id;
-    }
+
+    public Greeting(){}
 
     public Greeting(long id, String content) {
         this.id = id;
         this.content = content;
     }
 
-    //    public void setId(long id){
-//        this.id = id;
-//    }
+    public long getId() {
+        return id;
+    }
 
-    public String getContent(){
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    public String getContent() {
         return content;
     }
 
-//    public void setContent(String content){
-//        this.content = content;
-//    }
+    public void setContent(String content) {
+        this.content = content;
+    }
 
 
     @Override
