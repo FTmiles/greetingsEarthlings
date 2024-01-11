@@ -1,9 +1,11 @@
 ## Small Talk app, submit your greetings
 
-changed root directory of the app
-server.servlet.context-path=/myapp
+changed root directory of the app<br>
+server.servlet.context-path=/myapp<br>
 
 localhost:8080/myapp/
+--
+MySQL database name - greetings
 
 =========================================
 
