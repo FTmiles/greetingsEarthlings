@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<body>
+
+<h2>Pet name picker</h2>
+
+
+<!-- <form action="/action_page.php"> -->
+<form action='/myapp/petResponse' target='_self' method='post'>
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email"><br><br>
+
+    <fieldset>
+        <legend>Legendary -- the <b>W</b>hat</legend>
+        <p>Your pet type</p>
+        <input type='radio' id='typeCat' name='petType' value='cat'>
+        <label for='typeCat'>cat</label><br>
+        <input type='radio' id='typeDog' name='petType' value='dog'>
+        <label for='typeDog'>dog</label><br>
+        <input type='radio' id='typeOther' name='petType' value='other'>
+        <label for='typeOther'>other</label>
+
+        <p>Pet age</p>
+        <label for='age'>Pick one</label>
+        <select id='age' name='ageNA'>
+            <option value='1'>Baby</option>
+            <option value='2'>Junior</option>
+            <option value='3'>Young aduld</option>
+            <option value='3'>Over the hill</option>
+            <option value='4'>Senior</option>
+        </select>
+
+        <label for="gender">Your pet's gender</label>
+        <select id="gender" name="gender">
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+        </select>
+    </fieldset>
+
+    <p>Select one or more of your pet qualities</p>
+    <input type='checkbox' id='qualSleep' name='quality1' value='sleeps'>
+    <label for='qualSleep'>Sleeps all day</label><br>
+    <input type='checkbox' id='qualRunner' name='quality2' value='runs'>
+    <label for='qualRunner'>Runner</label>
+    <input type='checkbox' id='qualStripes' name='quality3' value='stripes'>
+    <label for='qualStripes'>Has stripes</label>
+    <input type='checkbox' id='qualSpots' name='quality4' value='spots'>
+    <label for='qualSpots'>Has spots</label>
+    <input type='checkbox' id='qualPlays' name='quality5' value='plays'>
+    <label for='qualPlays'>Likes to play</label>
+
+    <p>Describe the looks</p>
+
+    <label for='color'>Pet color</label>
+    <select id='color' name='colorNA' multiple>
+        <option value='black'>Black</option>
+        <option value='white'>Caucasian</option>
+        <option value='brown' selected>Brown</option>
+        <option value='yellow'>Yellow</option>
+        <option value='red'>Red</option>
+        <option value='rainbow'>Rainbow</option>
+    </select>
+
+    <label for='favGrubId'>Your pet's favorite food</label>
+    <input  id='favGrubId' list='favFood' name='favFoodNA' autofocus>
+    <datalist id='favFood'>
+        <option value='fish'>
+        <option value='dog food'>
+        <option value='salad'>
+        <option value='seafood'>
+        <option value='noodles'>
+    </datalist>
+
+    <p>Other details about your pet. What comes to mind? don't leave anything out, and don't hide anything cuz I got eyes everywhere 👀</p>
+    <textarea name='otherDetails' rows='8' cols='31' style="width:300px; height:80px;">
+    Spill the Java beans
+  </textarea>
+
+    <p>Favorite integer number</p>
+<!--    <input type="text" name="favNumber">-->
+    <div th:object="${petObj}">
+    <input type="text" th:field="*{favNumber}">
+    </div>
+    <br><br>
+
+
+    <input type='submit' value='Vamos (submit)'>
+    <button type='reset'>🧹Drop it like it's hot</button>
+
+</form>
+
+
+
+
+
+
+
+
+</body>
+</html>
+
